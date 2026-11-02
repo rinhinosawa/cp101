@@ -7,6 +7,7 @@ __pycache__/
 *.pyc# 
 
 data/raw/
+data/processed/
 notebooks/cache/
 
 .vscode/
