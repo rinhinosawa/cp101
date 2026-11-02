@@ -1,0 +1,12 @@
+dataset,step,rows_before,rows_after,reason
+stations,keep parent stations,287,50,platform rows would count each station more than once
+stations,drop missing coordinates,50,50,cannot map a station without a location
+tracts,keep the 5 counties,9129,1447,only the BART counties are in our study area
+tracts,drop tracts with no land,1447,1442,water-only tracts have no jobs
+jobs,keep blocks in the 5 counties,262357,39265,LODES covers all of California
+jobs,add up blocks to tracts,39265,1441,"we join to tracts, not blocks"
+tracts,set jobs to 0 for 1 tracts not in LODES,1442,1442,LODES only lists blocks that have jobs
+stations,spatial join to tracts,50,50,stations outside the 5 counties would be dropped
+catchments,250 m join,50,50,stations whose circle touches at least one tract
+catchments,500 m join,50,50,stations whose circle touches at least one tract
+catchments,1000 m join,50,50,stations whose circle touches at least one tract
